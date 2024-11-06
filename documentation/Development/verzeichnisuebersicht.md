@@ -1,0 +1,42 @@
+# Verzeichnisübersicht
+
+### Laravel
+* App\Actions\*
+* App\Console\*
+* App\Exceptions\*
+* App\Http\Kernel
+* App\Providers\*
+* bootstrap\*
+* config\*
+* routes\channels.php
+* routes\console.php
+* storage\*
+
+### Generated
+* App\Http\Controllers\*
+* App\Http\Middleware\*
+* App\Http\Requests\*
+* App\Http\Resources\*
+* App\Http\Responses\*
+* App\Mail\*
+* App\Models\*
+* App\Notifications\*
+* App\Policies\*
+* App\Rules\*
+* App\Settings\*
+* Database\Factories\*
+* database\migrations\*
+* Database\Seeders\*
+* Database\Settings\*
+* lang\*
+* public\*
+* resources\*
+* routes\api.php
+* routes\web.php
+* tests\*
+
+### Custom
+* App\Services\*
+* config\wenom.php
+* resources\js\*
+* documentation\*

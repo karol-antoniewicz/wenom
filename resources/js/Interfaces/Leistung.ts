@@ -1,0 +1,32 @@
+import { Schueler } from './Schueler'
+
+export interface Leistung {
+	[index: string]: any,
+	id: number,
+	klasse: string|Number|null,
+	name: string,
+	vorname: string,
+	nachname: string,
+	geschlecht: 'm'|'w'|'x',
+	fach: string|null,
+	fach_id: number|null,
+	lehrer: string,
+	jahrgang: string,
+	kurs: string|null,
+	note: string|null,
+	fachbezogeneBemerkungen: string|null,
+	fehlstundenGesamt: Number,
+	fehlstundenUnentschuldigt: Number,
+	fs: number|null,
+	fsu: number|null,
+	istGemahnt: boolean,
+	mahndatum: string,
+	schueler: Schueler,
+	editable: {
+		teilnoten: boolean,
+		noten: boolean,
+		mahnungen: boolean,
+		fehlstunden: boolean,
+		fb: boolean,
+	},
+}

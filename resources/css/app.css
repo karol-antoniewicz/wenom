@@ -1,0 +1,17 @@
+/*@tailwind base;*/
+/*@tailwind components;*/
+/*@tailwind utilities;*/
+
+[v-cloak] {
+    display: none;
+}
+
+.cell {}
+
+.cell__input {
+    @apply w-full h-full block
+}
+
+.cell--editable {
+    @apply bg-grey
+}
