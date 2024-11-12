@@ -64,14 +64,14 @@ class Install extends Command
         );
 
         $this->singleQuestion(
-            fn (): string => $this->ask('AES Password', config('wenom.aes_password')),
+            fn (): string => $this->secret('AES Password'),
             'AES Password',
             'AES_PASSWORD',
             ['required', 'string'],
         );
 
         $this->singleQuestion(
-            fn (): string => $this->ask('AES Salt', config('wenom.aes_salt')),
+            fn (): string => $this->secret('AES Salt'),
             'AES Salt',
             'AES_SALT',
             ['required', 'string'],
@@ -113,7 +113,7 @@ class Install extends Command
             );
 
             $this->singleQuestion(
-                fn (): string|null => $this->ask('DB Password', config('database.connections.mysql.password')),
+                fn (): string|null => $this->secret('DB Password'),
                 'DB Password',
                 'DB_PASSWORD',
                 ['nullable', 'string'],
@@ -161,7 +161,7 @@ class Install extends Command
             );
 
             $this->singleQuestion(
-                fn (): string => $this->ask('Mail Passwort', config('wenom.mail_send_credentials.password')),
+                fn (): string|null => $this->secret('Mail Passwort'),
                 'Mail Passwort',
                 'MAIL_PASSWORD',
                 ['required', 'string'],

@@ -25,11 +25,11 @@ class EnvService
      * Updates the .env file with a single key/value pair.
      *
      * @param string $key
-     * @param string|bool $value
+     * @param string|bool|null $value
      * @return void
      * @throws FileNotFoundException
      */
-    public function update(string $key, string|bool $value): void
+    public function update(string $key, string|bool|null $value): void
     {
         // Get .env path
         $path = base_path('.env');
@@ -54,14 +54,19 @@ class EnvService
     /**
      * Formats the value for the .env file.
      *
-     * @param string|bool $value
-     * @return string
+     * @param string|bool|null $value
+     * @return string|null
      */
-    private function wrapValue(string|bool $value): string
+    private function wrapValue(string|bool|null $value): string|null
     {
         // If value is boolean casts to string
         if (is_bool($value)) {
             return $value ? 'true' : 'false';
+        }
+
+        // If value is null casts keep type
+        if (is_null($value)) {
+            return null;
         }
 
         // Returns string wrapped in quotation marks
