@@ -18,6 +18,7 @@
 
                     <!-- TODO: visibility? -->
                     <SvwsUiMenuItem
+                        v-if="visible('teilleistungen')"
                         :active="activePage('teilleistungen')"
                         @click="navigate('teilleistungen')"
                     >
@@ -95,11 +96,12 @@
     const slots = useSlots();
     const auth: Auth = usePage().props.value.auth as Auth;
 
-    const visible = (item: 'mein_unterricht' | 'klassenleitung' | 'settings'): boolean => {
+    const visible = (item: 'mein_unterricht' | 'klassenleitung' | 'teilleistungen' |'settings'): boolean => {
         switch (item) {
             case 'mein_unterricht':
                 return !auth.administrator || (auth.user.lerngruppen.length > 0 && auth.administrator);
             case 'klassenleitung':
+            case 'teilleistungen':
                 return auth.user.klassen.length > 0;
             case 'settings':
                 return auth.administrator;

@@ -10,7 +10,7 @@
             </SvwsUiHeader>
             <div class="content-area">
                 <SvwsUiTable :items="rowsFiltered" :columns="cols" clickable count noDataText="" :toggle-columns="true" :filtered="isFiltered()" :filterReset="filterReset"
-                    :filterOpen="false" :sortByAndOrder="{ key: 'klasse', order: true}" :hiddenColumns="hiddenColumns" :allowArrowKeySelection="false">
+                    :filterOpen="false" :sortByAndOrder="{ key: 'klasse', order: true}" :hiddenColumns="hiddenColumns" :allowArrowKeySelection="true">
                     <template #filter>
                         <div class="filter-area-icon">
                             <SvwsUiButton @click="leistungEditableToggle()" v-if="lehrerCanOverrideFachlehrer || props.auth.administrator"
@@ -111,7 +111,8 @@
         fach: string,
         kurs: string,
         fachlehrer: string,
-        teilleistungen: string,
+        //hidden here according to ticket 386
+        //teilleistungen: string,
         quartalnoten: string,
         note: string,
         quartalnote: string,
@@ -156,7 +157,7 @@
 
     //these columns can be hidden/displayed on the page, which can overwrite the platform general settings under Einstellungen/Filter
     const toggles: Ref<TableColumnToggle> = ref({
-        teilleistungen: false,
+        //teilleistungen: false,
         quartalnoten: false,
         fachlehrer: false,
         mahnungen: false,
@@ -208,7 +209,8 @@
         result.push({ key: 'fach', label: 'Fach', sortable: true, span: 1, minWidth: 5, disabled: false, toggle: true });
         result.push({ key: 'kurs', label: 'Kurs', sortable: true, span: 2, minWidth: 5, disabled: false, toggle: true });
         result.push({ key: 'lehrer', label: 'Fachlehrer', sortable: true, span: 2, minWidth: 7, toggle: true });
-        result.push({ key: 'teilnoten', label: 'Teilnoten', sortable: true, span: 5, minWidth: 6, toggle: true });
+        //Teilleistungen column hidden here for the time being (ticket 386)
+        //result.push({ key: 'teilnoten', label: 'Teilnoten', sortable: true, span: 5, minWidth: 6, toggle: true });
         result.push({ key: 'quartalnoten', label: 'Quartal', sortable: true, span: 1, minWidth: 6, toggle: true });
         result.push({ key: 'note', label: 'Note', sortable: true, span: 1, minWidth: 6, toggle: true });
         result.push({ key: 'istGemahnt', label: 'Mahnungen', sortable: true, span: 1, minWidth: 8, toggle: true });
@@ -225,7 +227,8 @@
         fach: 'fach',
         kurs: 'kurs',
         fachlehrer: 'lehrer',
-        teilleistungen: 'teilnoten',
+        //Teilleistungen column hidden here for the time being (ticket 386)
+        //teilleistungen: 'teilnoten',
         quartalnoten: "quartalnoten",
         note: 'note',
         mahnungen: 'istGemahnt',

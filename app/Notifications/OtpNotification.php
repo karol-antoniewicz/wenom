@@ -5,6 +5,7 @@ namespace App\Notifications;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\HtmlString;
 
 class OtpNotification extends Notification
 {
@@ -41,8 +42,7 @@ class OtpNotification extends Notification
     {
         return (new MailMessage)
             ->subject('Ihr Einmalpasswort (OTP) für die Anmeldung')
-            ->line('Sehr geehrter Kunde,')
-            ->line("Ihr Einmalpasswort (OTP) für die Anmeldung lautet: {$this->otp}")
+            ->line(new HtmlString("Ihr Einmalpasswort (OTP) für die Anmeldung lautet: <strong>{$this->otp}</strong>"))
             ->line('Bitte geben Sie diesen Code innerhalb der nächsten 10 Minuten auf unserer Anmeldeseite ein, um fortzufahren.')
             ->line('Aus Sicherheitsgründen wird dieser Code nur einmalig verwendet und ist danach ungültig.')
             ->line('Sollten Sie diese Anfrage nicht gestellt haben, ignorieren Sie bitte diese E-Mail und setzen Sie sich umgehend mit unserem Kundenservice in Verbindung.');

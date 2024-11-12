@@ -287,5 +287,4 @@ class User extends Authenticatable
         return $this?->userSettings?->twofactor_otp == true
             && session()->get('otp_verified') == false;
     }
-
 }

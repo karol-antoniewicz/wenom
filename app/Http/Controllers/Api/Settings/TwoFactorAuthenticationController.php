@@ -7,7 +7,6 @@ use App\Services\EnvService;
 use Illuminate\Http\{JsonResponse, Request};
 use Symfony\Component\HttpFoundation\Response;
 
-
 class TwoFactorAuthenticationController extends Controller
 {
     /**
@@ -28,6 +27,7 @@ class TwoFactorAuthenticationController extends Controller
     public function set(Request $request, EnvService $service): JsonResponse
     {
         $service->update('TWO_FACTOR_AUTHENTICATION', $request->enabled);
+
         return response()->json((bool) config('wenom.two_factor_authentication'), Response::HTTP_OK);
     }
 }

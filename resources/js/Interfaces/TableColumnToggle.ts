@@ -1,6 +1,6 @@
 export interface TableColumnToggle {
     [index: string]: any,
-    teilleistungen: boolean,
+    teilleistungen?: boolean,
     quartalnoten: boolean,
     mahnungen: boolean,
     fachlehrer: boolean,

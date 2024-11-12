@@ -67,7 +67,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-		'mein.unterricht' => \App\Http\Middleware\MeinUnterricht::class,
+		'has.lerngruppen' => \App\Http\Middleware\CheckIfLerngruppen::class,
         'two.fa' => \App\Http\Middleware\Check2FA::class,
         'twofactor.otp' => \App\Http\Middleware\TwoFactorOtp::class,
     ];

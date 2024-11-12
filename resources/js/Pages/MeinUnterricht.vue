@@ -110,7 +110,8 @@
         [index: string]: string,
         fach: string,
         kurs: string,
-        teilleistungen: string,
+        //Teilleistungen column hidden here for the time being (ticket 386)
+        //teilleistungen: string,
         quartalnoten: string,
         note: string,
         mahnungen: string,
@@ -145,7 +146,8 @@
 
     // some columns may be displayed/hidden on demand
     const toggles: Ref<TableColumnToggle> = ref({
-        teilleistungen: false,
+        //s. ticket 386
+        //teilleistungen: false,
         quartalnoten: false,
         mahnungen: false,
         bemerkungen: false,
@@ -182,7 +184,8 @@
         const result = [...default_cols];
             result.push({ key: 'fach', label: 'Fach', sortable: true, span: 1, minWidth: 5, disabled: false, toggle: true });
             result.push({ key: 'kurs', label: 'Kurs', sortable: true, span: 2, minWidth: 5, disabled: false, toggle: true });
-            result.push({ key: 'teilnoten', label: 'Teilnoten', sortable: true, span: 5, minWidth: 15, toggle: true });
+            //Teilleistungen column hidden here for the time being (ticket 386)
+            // result.push({ key: 'teilnoten', label: 'Teilnoten', sortable: true, span: 5, minWidth: 15, toggle: true });
             result.push({ key: 'quartalnoten', label: 'Quartal', sortable: true, span: 1, minWidth: 6, toggle: true });
             result.push({ key: 'note', label: 'Note', sortable: true, span: 1, minWidth: 5, toggle: true });
             result.push({ key: 'istGemahnt', label: 'Mahnungen', sortable: true, span: 1, minWidth: 8, toggle: true });
@@ -198,7 +201,8 @@
     const filtersToCols: MeinUnterrichtFiltersToCols = {
         fach: 'fach',
         kurs: 'kurs',
-        teilleistungen: 'teilnoten',
+        //Teilleistungen column hidden here for the time being (ticket 386)
+        //teilleistungen: 'teilnoten',
         quartalnoten: 'quartalnoten',
         note: 'note',
         mahnungen: 'istGemahnt',

@@ -8,7 +8,8 @@
                 <!-- Avoid "Uncaught (in promise) TypeError: Cannot read properties of undefined..." with conditional rendering  -->
                 <div v-if="user_settings.filters_meinunterricht">
                     <h3 class="text-headline-md">Mein Unterricht</h3>
-                        <SvwsUiCheckbox v-model="user_settings.filters_meinunterricht.teilleistungen" type="toggle">Teilleistungen</SvwsUiCheckbox>
+                        <!-- TLs hidden in both tables for the momment according to ticket 386 -->
+                        <!-- <SvwsUiCheckbox v-model="user_settings.filters_meinunterricht.teilleistungen" type="toggle">Teilleistungen</SvwsUiCheckbox> -->
                         <SvwsUiCheckbox v-model="user_settings.filters_meinunterricht.mahnungen" type="toggle">Mahnungen</SvwsUiCheckbox>
                         <SvwsUiCheckbox v-model="user_settings.filters_meinunterricht.fehlstunden" type="toggle">Fachbezogene Fehlstunden</SvwsUiCheckbox>
                         <SvwsUiCheckbox v-model="user_settings.filters_meinunterricht.bemerkungen" type="toggle">Fachbezogene Bemerkungen</SvwsUiCheckbox>
@@ -19,7 +20,7 @@
                 </div>
                 <div v-if="user_settings.filters_leistungsdatenuebersicht">
                         <h3 class="text-headline-md">Leistungsdatenübersicht</h3>
-                        <SvwsUiCheckbox v-model="user_settings.filters_leistungsdatenuebersicht.teilleistungen" type="toggle">Teilleistungen</SvwsUiCheckbox>
+                        <!-- <SvwsUiCheckbox v-model="user_settings.filters_leistungsdatenuebersicht.teilleistungen" type="toggle">Teilleistungen</SvwsUiCheckbox> -->
                         <SvwsUiCheckbox v-model="user_settings.filters_leistungsdatenuebersicht.fachlehrer" type="toggle">Fachlehrer</SvwsUiCheckbox>
                         <SvwsUiCheckbox v-model="user_settings.filters_leistungsdatenuebersicht.mahnungen" type="toggle">Mahnungen</SvwsUiCheckbox>
                         <SvwsUiCheckbox v-model="user_settings.filters_leistungsdatenuebersicht.fehlstunden" type="toggle">Fachbezogene Fehlstunden</SvwsUiCheckbox>

@@ -31,6 +31,6 @@ class TestNotification extends Notification
         return (new MailMessage())
             ->subject('Dies ist eine Testmail von '. config('app.name'))
             ->line('Dies ist eine Testmail von '. config('app.name'))
-            ->line('Thank you for using our application!');
+            ->line('Vielen Dank, dass Sie unsere Anwendung nutzen!');
     }
 }

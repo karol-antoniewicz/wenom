@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\Settings\{
     EnvController, MatrixController, SettingsController, UserSettingsController
 };
 use App\Http\Controllers\{PassportController, SecureTransferController};
+use App\Http\Controllers\Api\Settings\TwoFactorAuthenticationController;
 use App\Http\Controllers\TestMailController;
 use Illuminate\Support\Facades\Route;
 
@@ -61,6 +62,15 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
             ->prefix('settings')
             ->name('api.settings.')
             ->group(function (): void {
+                // Defines the matrix settings controller route group for administrators
+                Route::controller(TwoFactorAuthenticationController::class)
+                    ->prefix('two_factor_authentication')
+                    ->name('two_factor_authentication')
+                    ->group(function () {
+                        Route::get('', 'get');
+                        Route::put('', 'set');
+                    });
+
                 // Defines the matrix settings controller route group for administrators
                 Route::controller(MatrixController::class)
                     ->prefix('matrix')

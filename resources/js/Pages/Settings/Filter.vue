@@ -7,7 +7,8 @@
             <div class="content">
                 <div>
                     <h3 class="text-headline-md">Mein Unterricht</h3>
-                    <SvwsUiCheckbox v-model="meinunterrichtSettings.teilleistungen" :value="true" type="toggle">Teilleistungen</SvwsUiCheckbox>
+                    <!-- TLs hidden in both tables for the momment according to ticket 386 -->
+                    <!-- <SvwsUiCheckbox v-model="meinunterrichtSettings.teilleistungen" :value="true" type="toggle">Teilleistungen</SvwsUiCheckbox> -->
                     <SvwsUiCheckbox v-model="meinunterrichtSettings.mahnungen" :value="1" type="toggle">Mahnungen</SvwsUiCheckbox>
                     <SvwsUiCheckbox v-model="meinunterrichtSettings.fehlstunden" :value="1" type="toggle">Fachbezogene Fehlstunden</SvwsUiCheckbox>
                     <SvwsUiCheckbox v-model="meinunterrichtSettings.bemerkungen" :value="1" type="toggle">Fachbezogene Bemerkungen</SvwsUiCheckbox>
@@ -19,7 +20,7 @@
 
                 <div>
                     <h3 class="text-headline-md">Leistungsdatenübersicht</h3>
-                    <SvwsUiCheckbox v-model="leistungsdatenuebersichtSettings.teilleistungen" :value="true" type="toggle">Teilleistungen</SvwsUiCheckbox>
+                    <!-- <SvwsUiCheckbox v-model="leistungsdatenuebersichtSettings.teilleistungen" :value="true" type="toggle">Teilleistungen</SvwsUiCheckbox> -->
                     <SvwsUiCheckbox v-model="leistungsdatenuebersichtSettings.fachlehrer" :value="1" type="toggle">Fachlehrer</SvwsUiCheckbox>
                     <SvwsUiCheckbox v-model="leistungsdatenuebersichtSettings.mahnungen" :value="1" type="toggle">Mahnungen</SvwsUiCheckbox>
                     <SvwsUiCheckbox v-model="leistungsdatenuebersichtSettings.fehlstunden" :value="1" type="toggle">Fachbezogene Fehlstunden</SvwsUiCheckbox>
